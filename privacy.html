@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StipaCaller — Privacy Policy</title>
+<style>
+body { font: 16px/1.55 -apple-system, system-ui, sans-serif; max-width: 720px; margin: 32px auto; padding: 0 20px; color: #222; }
+h1 { font-size: 24px; margin-bottom: 4px; }
+h2 { font-size: 18px; margin-top: 28px; }
+.updated { color: #666; font-size: 14px; margin-bottom: 24px; }
+ul { padding-left: 24px; }
+code { background: #f4f4f4; padding: 1px 5px; border-radius: 3px; font-size: 14px; }
+a { color: #0a58ca; }
+</style>
+</head>
+<body>
+
+<h1>StipaCaller — Privacy Policy</h1>
+<p class="updated">Last updated: 27 October 2026</p>
+
+<p>StipaCaller is an invite-only personal messaging and calling app. This policy
+describes what data the app and its server handle, in plain terms.</p>
+
+<h2>What the server stores</h2>
+<ul>
+  <li><strong>User identifier</strong> — a short handle you choose at invite
+      redemption (e.g. <code>lev</code>). Not your real name unless you put it there.</li>
+  <li><strong>Display name</strong> — what other contacts see; you provide this.</li>
+  <li><strong>Public key</strong> — used by other contacts to encrypt messages
+      to you. Public by design.</li>
+  <li><strong>Chat messages</strong> — stored on the server only as ciphertext
+      that can be decrypted only by the intended recipient (X25519
+      <code>crypto_box_seal</code>). The server cannot read message content.
+      Encrypted messages are kept until the account is deleted.</li>
+  <li><strong>Photos, videos and voice messages</strong> — encrypted on your
+      device before upload, stored encrypted for at most 7 days
+      (UpCloud Object Storage, Helsinki, Finland), then deleted.</li>
+  <li><strong>Contacts and groups</strong> — who is connected with whom on
+      StipaCaller, so messages and calls can be routed.</li>
+  <li><strong>Push notification tokens</strong> — device tokens issued by Google
+      (Firebase) and Apple so the server can wake your phone for new messages
+      and incoming calls.</li>
+  <li><strong>Activity times</strong> — when your app last reached the server
+      and when it was last open. Contacts who also have you as a contact see
+      "last active", unless you turn it off in Profile (which also hides
+      theirs from you).</li>
+  <li><strong>Family plan</strong> (where available) — which family you belong
+      to, the trial start, the "paid until" date, and the App Store or Google
+      Play reference of the subscription, used to check it with the store. We
+      never receive card or payment details: payment is handled entirely by
+      Apple or Google under their own privacy policies.</li>
+  <li><strong>Technical logs and diagnostics</strong> — server logs record
+      connections (including IP addresses) and which account messaged or
+      called which account, with times; the app sends diagnostics about
+      calls and app start-up (app version, phone model, operating system and
+      related settings, such as battery optimisation). These never contain
+      message content and are kept for a few weeks, to keep calls working
+      and to fix problems.</li>
+</ul>
+
+<h2>What the server does NOT store</h2>
+<ul>
+  <li>Your real name, email, or phone number — none are required.</li>
+  <li>Your contacts list from your phone — we never read it.</li>
+  <li>Your location — never collected.</li>
+  <li>Any advertising identifiers or third-party analytics or tracking.</li>
+  <li>The plaintext of your chats or call audio/video.</li>
+</ul>
+
+<h2>Calls</h2>
+<p>Voice and video calls use WebRTC. When direct peer-to-peer connectivity isn't
+possible, audio/video is relayed through our own TURN servers. The relay carries
+opaque encrypted (DTLS-SRTP) bytes — the server cannot decode call media.
+Calls are not recorded or stored.</p>
+
+<h2>Push notifications</h2>
+<p>To wake your phone for new messages or calls, the server sends a notification
+through Firebase Cloud Messaging (Google, Android) or the Apple Push Notification
+service (iPhone). A message notification carries the message in its encrypted
+form, which only your phone can decrypt, together with the sender's display
+name so your phone can show who wrote or is calling. Google and Apple cannot
+read message content.</p>
+
+<h2>Data location and operator</h2>
+<p>The server, the call relay servers and all stored data are in Helsinki,
+Finland, hosted by UpCloud Ltd (Finland). The app and server are operated by
+<strong>Lesti Software Oy</strong> (Finland).</p>
+
+<h2>Data deletion</h2>
+<p>You can permanently delete your account from inside the app:
+<strong>Profile &rarr; Delete account</strong>. Account deletion is
+immediate and removes your user record, message history on our
+server, contact graph, family membership, and any invite codes you have
+issued. A store subscription is not cancelled by deleting the account: cancel
+it in your Apple or Google account settings. Alternatively, email
+<a href="mailto:lev@lestisoftware.fi">lev@lestisoftware.fi</a> from
+the address you registered with (or include enough information to
+identify your account); manual deletion happens within 30 days.</p>
+
+<h2>Reporting and moderation</h2>
+<p>Chat is end-to-end encrypted, so the server cannot read message
+content and cannot proactively filter it. Moderation relies on user-
+side actions: in-app <strong>Block and report</strong> (long-press
+a contact) prevents future messages and calls from a specific user
+and opens an email so the user can describe what happened. We review
+reports within <strong>24 hours</strong> and, where substantiated,
+remove the offending user from the service. See the
+<a href="/eula.html">Terms of Use</a> for the full policy.</p>
+
+<h2>Permissions the app requests</h2>
+<ul>
+  <li><strong>Microphone</strong> — during calls and when you record a voice
+      message.</li>
+  <li><strong>Camera</strong> — when you turn video on during a call or take a
+      photo or video to send.</li>
+  <li><strong>Notifications</strong> — for incoming calls and messages.</li>
+  <li><strong>Network access</strong> — to reach the server.</li>
+</ul>
+
+<h2>Children</h2>
+<p>StipaCaller is not directed at children under 13 and does not knowingly
+collect data from them.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes materially, the "Last updated" date above will reflect
+the new revision date.</p>
+
+<h2>Contact</h2>
+<p>Questions or requests:
+<a href="mailto:lev@lestisoftware.fi">lev@lestisoftware.fi</a></p>
+
+</body>
+</html>
