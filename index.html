@@ -104,10 +104,10 @@ var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconn
 var camp=q.get('utm_campaign')||'',cont=q.get('utm_content')||'',med=q.get('utm_medium')||'';
 var slug=function(x){return x.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')};
 var ref=['utm_source='+src,'utm_medium='+med,'utm_campaign='+camp,'utm_content='+cont].join('&');
-var ct=slug(camp+'-'+cont.split(/\s/)[0]).slice(0,40),pt='';
+var ct=slug(camp+'-'+cont.split(/\s/)[0]).slice(0,30),pt='128825707';
 document.querySelectorAll('a.badge').forEach(function(a){var h=a.getAttribute('href');
 if(h.indexOf('play.google.com')>=0)a.href=h+'&referrer='+encodeURIComponent(ref);
-else if(pt&&h.indexOf('apps.apple.com')>=0)a.href=h+(h.indexOf('?')>=0?'&':'?')+'pt='+pt+'&ct='+encodeURIComponent(ct)+'&mt=8';});
+else if(pt&&h.indexOf('apps.apple.com')>=0)a.href=h.replace('/app/id','/app/apple-store/id')+(h.indexOf('?')>=0?'&':'?')+'pt='+pt+'&ct='+encodeURIComponent(ct)+'&mt=8';});
 }catch(e){}})();
 </script>
 </body>
